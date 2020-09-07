@@ -1,9 +1,10 @@
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
+    agent { label 'docker-slave-template' }
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh 'java --version'
+                sh 'pwd'
             }
         }
     }
